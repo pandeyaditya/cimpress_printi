@@ -15,8 +15,8 @@ Installation
 To run the project, follow the below steps
 
 ```bash
-$ git clone https://github.com/pandeyaditya/cimpress_printi.git
-$ cd cimpress_printi
+$ git clone https://github.com/pandeyaditya/cimpress_printi.git projectname
+$ cd projectname
 $ composer update
 $ php bin/console server:run
 ```
