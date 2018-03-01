@@ -12,11 +12,12 @@ Requirements
 Installation
 ------------
 
--> Git clone https://github.com/pandeyaditya/cimpress_printi.git
+To run the project, follow the below steps
 
-```bash
 $ git clone https://github.com/pandeyaditya/cimpress_printi.git
-$ cd 
+$ cd cimpress_printi
 $ composer update
 $ php bin/console server:run
-```
+
+
+Once the server is running, you can see the project by going to the url : http://127.0.0.1:8000  
