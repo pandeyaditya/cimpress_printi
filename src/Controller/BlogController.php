@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Symfony package.
  *
@@ -26,6 +25,7 @@ use Symfony\Component\EventDispatcher\GenericEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 /**
  * Controller used to manage blog contents in the public part of the site.
@@ -50,12 +50,9 @@ class BlogController extends AbstractController
      */
     public function index(int $page, string $_format, PostRepository $posts): Response
     {
-        $latestPosts = $posts->findLatest($page);
-
-        // Every template name also has two extensions that specify the format and
-        // engine for that template.
-        // See https://symfony.com/doc/current/templating.html#template-suffix
-        return $this->render('blog/index.'.$_format.'.twig', ['posts' => $latestPosts]);
+        $client = new \Github\Client();
+        $repositories = $client->api('user')->repositories('symfony');
+        return $this->render('blog/index.'.$_format.'.twig', ['repos' => $repositories]);
     }
 
     /**

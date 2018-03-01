@@ -10,3 +10,7 @@ homepage:
     defaults:
         template: default/homepage.html.twig
         _locale: '%locale%'
+
+repo:
+  path: /repo/
+  controller: App\Controller\RepoController
